@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build with Marvin</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">Freelance Web Design & Development</a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <button id="themeToggle" class="button is-dark" style="font-size: 1.3rem;">🌙</button>
+        </div>
+        <a class="navbar-item" href="#info">Info</a>
+        <a class="navbar-item" href="#services">Services</a>
+        <a class="navbar-item" href="#projects">Projects</a>
+        <a class="navbar-item" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">Build with Marvin</h1>
+        <h2 class="subtitle">Web Solutions That Work</h2>
+        <a href="#projects" class="button is-dark is-medium mt-4">View Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="info" class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Info</h2>
+      <div class="content has-text-centered">
+        <p>Hi there! I'm a freelance web designer & developer passionate about building clean, modern, and responsive websites that help businesses grow online. With a strong eye for detail and a user-first mindset, I specialize in creating custom designs and functional solutions tailored to your brand’s goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Services Offered</h2>
+      <div class="columns is-multiline">
+        <div class="column is-one-third has-text-centered">
+          <div class="box">
+            <h3 class="title is-5">Web Development</h3>
+            <p>Custom websites built with modern technologies like HTML, CSS, JavaScript, React, and more.</p>
+          </div>
+        </div>
+        <div class="column is-one-third has-text-centered">
+          <div class="box">
+            <h3 class="title is-5">UI/UX Design</h3>
+            <p>Designing user-friendly interfaces with a focus on accessibility and responsiveness.</p>
+          </div>
+        </div>
+        <div class="column is-one-third has-text-centered">
+          <div class="box">
+            <h3 class="title is-5">Website Maintenance</h3>
+            <p>Keeping your website secure, up-to-date, and running smoothly 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Projects</h2>
+      <div class="columns is-multiline is-centered">
+        <div class="column is-one-quarter">
+          <figure class="image is-4by3">
+            <a href="#"><img src="Portfolio1.png.jpg" alt="Project 1"></a>
+          </figure>
+        </div>
+        <div class="column is-one-quarter">
+          <figure class="image is-4by3">
+            <a href="#"><img src="Portfolio2.png.jpg" alt="Project 2"></a>
+          </figure>
+        </div>
+        <div class="column is-one-quarter">
+          <figure class="image is-4by3">
+            <a href="#"><img src="Portfolio3.png.jpg" alt="Project 3"></a>
+          </figure>
+        </div>
+        <div class="column is-one-quarter">
+          <figure class="image is-4by3">
+            <a href="#"><img src="Portfolio4.png.jpg" alt="Project 4"></a>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Contact Me</h2>
+      <form class="box" action="#" method="POST">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Your Name">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="your@email.com">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Your message..."></textarea>
+          </div>
+        </div>
+        <div class="field has-text-centered">
+          <button class="button is-primary">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+
+    window.onload = () => {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleBtn.textContent = '☀️'; 
+      } else {
+        toggleBtn.textContent = '🌙'; 
+      }
+    };
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
